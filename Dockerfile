@@ -1,7 +1,8 @@
 FROM golang:1.11 AS build
 WORKDIR /go/src/asw-go-demo
+RUN apk --no-cache add git;go get -d -v github.com/go-sql-driver/mysql
 ADD ./src .
-RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo .
+RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o asw-go-demo .
 
 FROM scratch AS prod
 EXPOSE 8080
