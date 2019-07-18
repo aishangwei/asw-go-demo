@@ -1,4 +1,4 @@
-FROM golang:1.11 AS build
+FROM golang:1.11-alpine3.10 AS build
 WORKDIR /go/src/asw-go-demo
 RUN apk --no-cache add git;go get -d -v github.com/go-sql-driver/mysql
 ADD ./src .
