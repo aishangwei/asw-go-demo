@@ -40,7 +40,7 @@ func Hello(response http.ResponseWriter, request *http.Request) {
 	if err != nil {
 		fmt.Fprintf(response, "Error: %s", err)
 	} else {
-		fmt.Fprintf(response, "Hostname: %s", host)
+		fmt.Fprintf(response, "Hostnames: %s", host)
 	}
 }
 
